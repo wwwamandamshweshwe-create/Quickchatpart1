@@ -37,7 +37,7 @@ Run `LoginTest.java` with JUnit 5.
 
 ## Author
 
-Kyle Smith
+Amanda Mshweshwe
 
 # Changelog
 
