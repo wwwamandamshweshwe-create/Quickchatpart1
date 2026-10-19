@@ -7,7 +7,6 @@ public class LoginTest {
     
     Login login = new Login("Kyle","Smith");
     
-    // --- Username Tests ---
     @Test public void testUserNameCorrect() { 
         assertTrue(login.checkUserName("kyl_1")); 
     }
@@ -21,7 +20,6 @@ public class LoginTest {
         login.registerUser("kyle!!!!!!!", "Ch&&sec@ke99!"));
     }
 
-    // --- Password Tests ---
     @Test public void testPasswordCorrect() { 
         assertTrue(login.checkPasswordComplexity("Ch&&sec@ke99!")); 
     }
@@ -40,7 +38,6 @@ public class LoginTest {
         login.registerUser("kyl_1", "password"));
     }
     
-    // --- Cellphone Tests ---
     @Test public void testCellCorrect() { 
         assertTrue(login.checkCellPhoneNumber("+27838968976")); 
     }
@@ -59,7 +56,6 @@ public class LoginTest {
         login.registerUserCell("08966553"));
     }
 
-    // --- Login Tests ---
     @Test public void testLoginSuccessful() {
         assertTrue(login.loginUser("kyl_1", "Ch&&sec@ke99!"));
     }
