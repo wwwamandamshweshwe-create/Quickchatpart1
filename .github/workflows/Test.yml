@@ -29,13 +29,14 @@ jobs:
           curl -fsSL -o lib/json.jar              https://repo1.maven.org/maven2/org/json/json/20240303/json-20240303.jar
 
       - name: Run tests with Ant
+        working-directory: QuickChat
         run: |
-          ant -f build.xml clean test \
-            -Dlibs.junit_4.classpath=lib/junit-4.13.2.jar \
-            -Dlibs.junit_5.classpath=lib/junit-4.13.2.jar \
-            -Dlibs.hamcrest.classpath=lib/hamcrest-core-1.3.jar \
-            -Dfile.reference.gson-2.10.1.jar=lib/gson-2.10.1.jar \
-            -Dfile.reference.json-20250517.jar=lib/json.jar \
+          ant clean test \
+            -Dlibs.junit_4.classpath=../lib/junit-4.13.2.jar \
+            -Dlibs.junit_5.classpath=../lib/junit-4.13.2.jar \
+            -Dlibs.hamcrest.classpath=../lib/hamcrest-core-1.3.jar \
+            -Dfile.reference.gson-2.10.1.jar=../lib/gson-2.10.1.jar \
+            -Dfile.reference.json-20250517.jar=../lib/json.jar \
             -Djavac.source=17 \
             -Djavac.target=17
 
@@ -44,4 +45,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: build/test/results
+          path: QuickChat/build/test/results
